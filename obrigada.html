@@ -2,62 +2,54 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <title>Obrigada!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Obrigado pelo seu Pedido!</title>
-  <link rel="icon" type="image/png" href="https://i.imgur.com/RqKYF8B.png">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
+      margin: 0;
       font-family: 'Arial', sans-serif;
-      background: #f2f2f2;
-      color: #333;
+      background: linear-gradient(to bottom, #fcb69f, #ffecd2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
       text-align: center;
-      padding: 50px 20px;
+      color: #333;
     }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .container img {
-      max-width: 120px;
+    img {
+      max-width: 180px;
       margin-bottom: 20px;
     }
-    .container h1 {
-      color: #4caf50;
-      font-size: 2em;
-      margin-bottom: 20px;
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
-    .container p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
     }
     .btn-voltar {
-      display: inline-block;
-      background: #ffc107;
-      color: #000;
-      text-decoration: none;
-      padding: 12px 25px;
+      background: #ff9800;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
       border-radius: 8px;
-      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none;
     }
     .btn-voltar:hover {
-      background: #ff9800;
+      background: #fb8c00;
     }
   </style>
 </head>
 <body>
 
-<div class="container">
-  <img src="https://i.imgur.com/RqKYF8B.png" alt="Logo IzaManu Piquenique">
-  <h1>Pedido Recebido com Sucesso!</h1>
-  <p>Obrigada por escolher o <strong>IzaManu Piquenique</strong>! Recebemos o seu pedido e logo entraremos em contato para confirmar a disponibilidade dos itens e combinar os detalhes da retirada.</p>
-  <p>Será um prazer fazer parte do seu momento especial!</p>
-  <a class="btn-voltar" href="index.html">Voltar para o Início</a>
-</div>
+  <img src="https://i.imgur.com/RqKYF8B.png" alt="Logo IzaManu">
+  <h1>Obrigada pelo seu pedido!</h1>
+  <p>Recebemos sua solicitação pelo WhatsApp e logo entraremos em contato para confirmar os detalhes.</p>
+
+  <a href="index.html" class="btn-voltar">Voltar para o início</a>
 
 </body>
 </html>
