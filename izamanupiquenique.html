@@ -13,25 +13,54 @@
       color: #333;
       text-align: center;
     }
-    .container {
-      padding: 30px;
-      max-width: 900px;
-      margin: auto;
-    }
     h1 {
       color: #2e7d32;
-      margin-bottom: 20px;
+      margin: 30px 0 20px;
     }
     p {
       line-height: 1.6;
-      margin-bottom: 20px;
+      margin: 15px 20px;
       font-size: 18px;
     }
-    img {
+    .card {
+      background-color: #f0f0f0;
+      padding: 30px 20px;
+      margin: 30px 20px;
+      border-radius: 15px;
+    }
+    .filosofia {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .filosofia-item {
+      flex: 1 1 250px;
+      max-width: 300px;
+    }
+    .filosofia-item img {
       max-width: 100%;
       height: auto;
-      border-radius: 15px;
-      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+    .filosofia-item h3 {
+      margin: 15px 0 10px;
+      color: #2e7d32;
+    }
+    .filosofia-item p {
+      font-size: 16px;
+      margin: 0 0 10px;
+    }
+    .frase {
+      font-style: italic;
+      margin: 30px 0 10px;
+      font-size: 18px;
+    }
+    .assinatura {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
     }
     .btn-voltar {
       display: inline-block;
@@ -41,6 +70,7 @@
       text-decoration: none;
       border-radius: 30px;
       font-size: 16px;
+      margin: 30px auto;
       transition: background 0.3s ease;
     }
     .btn-voltar:hover {
@@ -50,21 +80,44 @@
 </head>
 <body>
 
-  <div class="container">
-    <h1>Quem Somos</h1>
-
-    <img src="https://i.imgur.com/dJuVddO.jpg" alt="IzaManu Piquenique">
-
-    <p>Somos apaixonadas por criar momentos especiais e cheios de amor! A IzaManu Piquenique nasceu do desejo de proporcionar experiências encantadoras, seja para famílias, casais, amigos ou eventos especiais.</p>
-
-    <p>Nossa missão é oferecer a você a oportunidade de montar o seu piquenique dos sonhos, escolhendo cada detalhe para deixar tudo do jeitinho que sempre imaginou.</p>
-
-    <p>Com a locação de itens cuidadosamente selecionados, trazemos mais praticidade, charme e personalidade para o seu momento ao ar livre.</p>
-
-    <p>Viva momentos inesquecíveis com a IzaManu Piquenique!</p>
-
-    <a class="btn-voltar" href="http://www.izamanupiquenique.com.br/index.html">Voltar para o Catálogo</a>
+  <!-- Capa da Página -->
+  <div style="text-align: center; margin: 20px 0;">
+    <img src="https://i.imgur.com/w6mtgZj.jpg" alt="IzaManu Piquenique" style="max-width: 100%; height: auto; display: inline-block; border-radius: 10px;">
   </div>
+
+  <!-- Nossa História -->
+  <h1>Nossa História</h1>
+  <p>Somos as irmãs Izadora e Emanuele Lacerda, apaixonadas por piqueniques e momentos ao ar livre. Nossa conexão com a natureza e o desejo de proporcionar experiências memoráveis para as famílias nos inspirou a criar a IzaManu Piquenique.</p>
+  <p>Acreditamos que, em meio à correria do dia a dia, momentos de qualidade com quem amamos são preciosos. Por isso, criamos um serviço que facilita a realização de piqueniques perfeitos, sem complicações ou grandes investimentos.</p>
+  <p>Nossa missão é possibilitar que famílias e amigos construam memórias inesquecíveis e passem um tempo de qualidade juntos, conectados entre si e com a natureza.</p>
+
+  <!-- Card Nossa Filosofia -->
+  <div class="card">
+    <h1>Nossa Filosofia</h1>
+    <div class="filosofia">
+      <div class="filosofia-item">
+        <img src="https://i.imgur.com/yYJbzLO.jpg" alt="Momentos Especiais">
+        <h3>Momentos Especiais</h3>
+        <p>Acreditamos que os momentos mais simples podem se tornar as memórias mais preciosas.</p>
+      </div>
+      <div class="filosofia-item">
+        <img src="https://i.imgur.com/srH9loC.jpg" alt="Conexão com a Natureza">
+        <h3>Conexão com a Natureza</h3>
+        <p>Incentivamos a reconexão com o mundo natural, essencial para nosso bem-estar físico e mental.</p>
+      </div>
+      <div class="filosofia-item">
+        <img src="https://i.imgur.com/20MPfgo.jpg" alt="Laços Familiares">
+        <h3>Laços Familiares</h3>
+        <p>Fortalecemos os laços entre familiares e amigos através de experiências compartilhadas.</p>
+      </div>
+    </div>
+
+    <p class="frase">"Não há nada mais precioso do que criar memórias com quem amamos, em meio à beleza da natureza."</p>
+    <div class="assinatura">Izadora e Emanuele Lacerda</div>
+  </div>
+
+  <!-- Botão Voltar -->
+  <a class="btn-voltar" href="http://www.izamanupiquenique.com.br/index.html">Voltar para o Catálogo</a>
 
 </body>
 </html>
