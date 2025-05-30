@@ -1,16 +1,294 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IzaManu Piquenique</title>
-  <link rel="icon" href="https://lh4.googleusercontent.com/K2i-AbXACR8tAV-fKHnD-S9sHVMZLZu07NMw5ScupJi4qHqAjWX-4Ea3ODk0Jf5R069szZd5owlKV3md80ZyMu4=w16383" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="https://i.imgur.com/RqKYF8B.png">
   <style>
-    /* Estilos CSS aqui... (omitido por brevidade) */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; }
+
+    .capa {
+      background: linear-gradient(rgba(255,255,0,0.4), rgba(0,128,0,0.4)), url('https://i.imgur.com/ahju3Xh.png') center/cover no-repeat;
+      height: 100vh;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+    .capa h1 { font-size: 3em; margin-bottom: 20px; }
+    .capa p { font-size: 1.2em; margin-bottom: 30px; }
+    .btn {
+      background: #ffc107;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      cursor: pointer;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .btn:hover { background: #ff9800; }
+
+    .catalogo {
+      background: #f2f2f2;
+      padding: 50px 20px;
+    }
+    .catalogo h2 { text-align: center; margin-bottom: 30px; }
+
+    .itens {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .item {
+      background: #fff;
+      width: 300px;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .item h3 { margin: 10px 0; }
+    .item p { font-size: 0.95em; margin: 5px 0; }
+    .preco { font-weight: bold; margin: 10px 0; }
+    .selecione {
+      width: 70%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      background: #ffc107;
+      color: #000;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .selecione.selecionado {
+      background: #4caf50;
+      color: #fff;
+    }
+    .item.ativo {
+      border-color: #4caf50;
+    }
+    .ilustrativo {
+      font-size: 10px;
+      color: #545454;
+      font-style: italic;
+      text-align: left;
+      margin-top: 5px;
+    }
+
+    .formulario {
+      max-width: 600px;
+      margin: 30px auto;
+      text-align: center;
+    }
+    .formulario label {
+      font-weight: bold;
+      display: block;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .formulario p {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .formulario input[type="date"] {
+      padding: 10px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    .resumo {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.1em;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .popup-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 500px;
+      overflow-y: auto;
+      max-height: 80vh;
+      text-align: center;
+      position: relative;
+    }
+    .popup-content p {
+      margin: 10px 0;
+    }
+    .popup-content .btn {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+    .btn-finalizar {
+      display: block;
+      margin: 30px auto 0;
+    }
+
+    @media (max-width: 600px) {
+      .capa h1 { font-size: 2em; }
+      .catalogo h2 { font-size: 1.5em; }
+      .item { width: 90%; }
+    }
   </style>
 </head>
 <body>
-  <!-- Conteúdo HTML aqui... (omitido por brevidade) -->
+
+<div class="capa">
+  <h1>Monte seu Kit de Piquenique Perfeito</h1>
+  <p>Escolha os itens que você precisa e tenha um momento inesquecível ao ar livre. Ganhe desconto a partir de 3 itens!</p>
+</div>
+
+<div class="catalogo" id="catalogo">
+  <h2>Itens disponíveis</h2>
+  <div class="itens" id="itens"></div>
+
+  <div class="formulario">
+    <label for="data">Data de Retirada</label>
+    <p>Por favor, selecione a data desejada para retirada dos itens. Verificaremos a disponibilidade e entraremos em contato para confirmar.</p>
+    <input type="date" id="data">
+  </div>
+
+  <div class="resumo" id="resumo">Total: R$ 0,00 | Desconto: R$ 0,00</div>
+  <button class="btn btn-finalizar" onclick="finalizarPedido()">Finalizar Pedido</button>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content" id="popupContent">
+    <button class="close-btn" onclick="fecharPopup()">✖</button>
+  </div>
+</div>
+
+<script>
+  const itens = [
+    { img: 'https://i.imgur.com/tIOPjFA.png', titulo: 'Cesta de Piquenique', valor: 45 },
+    { img: 'https://i.imgur.com/RvuHCCO.png', titulo: 'Mesa de piquenique', valor: 60 },
+    { img: 'https://i.imgur.com/rdn4kMv.png', titulo: 'Kit Decoração', valor: 35 },
+    { img: 'https://i.imgur.com/Ad8u5Zx.jpeg', titulo: 'Toalha de piquenique', valor: 20 },
+    { img: 'https://i.imgur.com/4O7aigm.png', titulo: 'Kit simples de louça', valor: 45 },
+    { img: 'https://i.imgur.com/qdhLWaM.jpeg', titulo: 'Kit completo de louça', valor: 60 },
+  ];
+
+  const selecionados = [];
+  const itensDiv = document.getElementById('itens');
+
+  itens.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'item';
+    div.innerHTML = `
+      <img src="${item.img}">
+      <h3>${item.titulo}</h3>
+      <div class="preco">R$ ${item.valor},00</div>
+      <button class="selecione" onclick="selecionar(${i}, this)">Selecionar</button>
+      <div class="ilustrativo">*Imagem meramente ilustrativa</div>
+    `;
+    itensDiv.appendChild(div);
+  });
+
+  function selecionar(i, btn) {
+    const idx = selecionados.indexOf(i);
+    if (idx > -1) {
+      selecionados.splice(idx, 1);
+      btn.classList.remove('selecionado');
+      btn.innerHTML = 'Selecionar';
+    } else {
+      selecionados.push(i);
+      btn.classList.add('selecionado');
+      btn.innerHTML = '✔ Selecionado';
+    }
+    atualizarResumo();
+  }
+
+  function atualizarResumo() {
+    let total = 0, desconto = 0;
+    selecionados.forEach((i, index) => {
+      total += itens[i].valor;
+      if (index >= 2) desconto += itens[i].valor * 0.03;
+    });
+    document.getElementById('resumo').innerHTML = `Total: R$ ${total.toFixed(2)} | Desconto: R$ ${desconto.toFixed(2)}`;
+  }
+
+  function finalizarPedido() {
+    if (!selecionados.length) return alert('Selecione pelo menos um item.');
+    const data = document.getElementById('data').value;
+    if (!data) return alert('Selecione a data de retirada.');
+
+    let msg = 'Pedido IzaManu Piquenique:%0A%0AItens:%0A';
+    let total = 0, desconto = 0;
+
+    selecionados.forEach((i, index) => {
+      msg += `- ${itens[i].titulo} (R$ ${itens[i].valor},00)%0A`;
+      total += itens[i].valor;
+      if (index >= 2) desconto += itens[i].valor * 0.03;
+    });
+
+    msg += `%0AData de Retirada: ${data}%0A`;
+    msg += `Total: R$ ${total.toFixed(2)}%0A`;
+    msg += `Desconto: R$ ${desconto.toFixed(2)}%0A`;
+    msg += `Total com Desconto: R$ ${(total-desconto).toFixed(2)}%0A%0A`;
+    msg += `Importante: A disponibilidade dos itens está sujeita à confirmação.`;
+
+    const content = document.getElementById('popupContent');
+    content.innerHTML = `
+      <button class="close-btn" onclick="fecharPopup()">✖</button>
+      <p style="font-weight:bold; color:blue;">Total: R$ ${total.toFixed(2)}</p>
+      <p style="font-style:italic; color:red;">Desconto: R$ ${desconto.toFixed(2)}</p>
+      <p style="font-weight:bold; color:green;">Total com Desconto: R$ ${(total-desconto).toFixed(2)}</p>
+      <p style="font-style:italic; color:red;">Importante: A disponibilidade dos itens está sujeita à confirmação.</p>
+      <a class="btn" href="https://wa.me/+5561996448248?text=${msg}" target="_blank" onclick="reiniciarSite()">FINALIZAR PEDIDO</a>
+    `;
+    document.getElementById('popup').style.display = 'flex';
+  }
+
+  function fecharPopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  function reiniciarSite() {
+    setTimeout(() => {
+      window.location.href = 'https://sites.google.com/view/piqueniquedaemanuele/obrigada';
+    }, 500);
+  }
+</script>
+
 </body>
 </html>
