@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piquenique com Arte — IzaManu Piquenique (20/09/2025)</title>
+    <meta name="description" content="Viva uma tarde criativa ao ar livre com materiais de arte e lanche incluídos. Garanta sua vaga via Pix. 20/09/2025, 14h–17h.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Roboto:wght@300;400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/BPkNjHc.png" type="image/png">
+    
+    <style>
+        /* Variáveis de cores */
+        :root {
+            --rosa-vintage: #f36182;
+            --marrom-chocolate: #793d18;
+            --vermelho-profundo: #a80213;
+            --dourado-suave: #deb36c;
+            --branco: #ffffff;
+            --fundo-claro: #fff9f5;
+            --texto-escuro: #333333;
+        }
+        
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--texto-escuro);
+            background-color: var(--fundo-claro);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Great Vibes', cursive;
+            font-weight: normal;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: var(--vermelho-profundo);
+            color: var(--branco);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--rosa-vintage);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--dourado-suave);
+            color: var(--marrom-chocolate);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--marrom-chocolate);
+            color: var(--dourado-suave);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--marrom-chocolate);
+        }
+        
+        /* Header/Hero */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--branco);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Contagem regressiva */
+        .countdown {
+            background-color: var(--dourado-suave);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .countdown-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--marrom-chocolate);
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .timer-unit {
+            background-color: var(--branco);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 100px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timer-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--vermelho-profundo);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .timer-label {
+            font-size: 1rem;
+            color: var(--marrom-chocolate);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Informações do evento */
+        .event-info {
+            background-color: var(--branco);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .info-card {
+            background-color: var(--fundo-claro);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--rosa-vintage);
+        }
+        
+        .info-icon {
+            font-size: 2.5rem;
+            color: var(--marrom-chocolate);
+            margin-bottom: 15px;
+        }
+        
+        .info-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--marrom-chocolate);
+        }
+        
+        .info-text {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .included-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 15px;
+        }
+        
+        .included-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .included-list li::before {
+            content: '✔️';
+            margin-right: 10px;
+            color: var(--vermelho-profundo);
+        }
+        
+        /* Mapa */
+        .map-section {
+            background-color: var(--fundo-claro);
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        /* Política de pagamento */
+        .payment-info {
+            background-color: var(--branco);
+        }
+        
+        .payment-card {
+            background-color: var(--fundo-claro);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--dourado-suave);
+        }
+        
+        .payment-steps {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .payment-steps li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .payment-steps li::before {
+            content: '➡️';
+            position: absolute;
+            left: 0;
+            color: var(--vermelho-profundo);
+        }
+        
+        /* FAQ */
+        .faq-section {
+            background-color: var(--fundo-claro);
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            background-color: var(--rosa-vintage);
+            color: var(--branco);
+            padding: 20px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            background-color: var(--branco);
+            padding: 20px;
+            display: none;
+        }
+        
+        .faq-active .faq-answer {
+            display: block;
+        }
+        
+        /* LGPD */
+        .lgpd-section {
+            background-color: var(--marrom-chocolate);
+            color: var(--branco);
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        .lgpd-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--texto-escuro);
+            color: var(--branco);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-whatsapp {
+            margin: 20px 0;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timer-unit {
+                min-width: 80px;
+                padding: 15px;
+            }
+            
+            .timer-value {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                min-height: 500px;
+            }
+            
+            .timer {
+                gap: 10px;
+            }
+            
+            .timer-unit {
+                min-width: 70px;
+                padding: 10px;
+            }
+            
+            .timer-value {
+                font-size: 1.5rem;
+            }
+            
+            .timer-label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics placeholder -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', 'UA-XXXXX-Y', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    <!-- Meta Pixel placeholder -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'XXXXXXXXXXXXXXXX');
+        fbq('track', 'PageView');
+    </script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <img src="https://i.imgur.com/BPkNjHc.png" alt="IzaManu Piquenique" class="logo">
+            <h1>Piquenique com Arte — Viva uma tarde criativa e inesquecível</h1>
+            <p>Uma tarde para relaxar, se conectar e despertar sua criatividade.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5561996448248?text=Olá! Quero garantir minha vaga no Piquenique com Arte (20/09/2025), nome: [seu nome], cidade: [sua cidade]. Comprovante Pix em anexo." class="btn btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Garantir minha vaga no WhatsApp
+                </a>
+                <button class="btn btn-secondary" onclick="copyPixKey()">
+                    <i class="fas fa-copy"></i> Copiar chave Pix
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Contagem Regressiva -->
+    <section class="countdown">
+        <div class="container">
+            <h2 class="countdown-title">Contagem Regressiva para o Evento</h2>
+            <div class="timer" id="countdown">
+                <div class="timer-unit">
+                    <div class="timer-value" id="days">00</div>
+                    <div class="timer-label">Dias</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="hours">00</div>
+                    <div class="timer-label">Horas</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="minutes">00</div>
+                    <div class="timer-label">Minutos</div>
+                </div>
+                <div class="timer-unit">
+                    <div class="timer-value" id="seconds">00</div>
+                    <div class="timer-label">Segundos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Informações do Evento -->
+    <section class="event-info">
+        <div class="container">
+            <h2 class="section-title">Informações do Evento</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="info-title">Data</h3>
+                    <p class="info-text">20 de setembro de 2025</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="info-title">Horário</h3>
+                    <p class="info-text">14h às 17h (tolerância 15 minutos)</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="info-title">Local</h3>
+                    <p class="info-text">Quadra 10, Chácara 03 – Bairro Anhanguera C</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="info-title">Público</h3>
+                    <p class="info-text">Crianças de 05 a 08 anos</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <h3 class="info-title">Vagas</h3>
+                    <p class="info-text">Limitadas: 08 participantes</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3 class="info-title">Ingresso</h3>
+                    <p class="info-text">R$ 80,00</p>
+                    <ul class="included-list">
+                        <li>Inclui materiais de arte (pintura e desenho)</li>
+                        <li>Inclui lanche durante o evento</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mapa -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Localização do Evento</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.200516612035!2d-48.005327!3d-16.064232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDAzJzUxLjIiUyA0OMKwMDAnMTkuMiJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="map-button">
+                <a href="https://maps.google.com/?q=-16.064232,-48.005327" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> Abrir no Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Política de Pagamento -->
+    <section class="payment-info">
+        <div class="container">
+            <h2 class="section-title">Política e Instruções de Pagamento</h2>
+            <div class="payment-card">
+                <p>Para garantir sua vaga no Piquenique com Arte, siga as instruções abaixo:</p>
+                <ol class="payment-steps">
+                    <li>Realize o pagamento via PIX para a chave: <strong>61996448248</strong></li>
+                    <li>Valor: R$ 80,00 por criança</li>
+                    <li>Confirmação da vaga somente após compensação do pagamento</li>
+                    <li>Envie o comprovante via WhatsApp para o número <strong>(61) 99644-8248</strong></li>
+                    <li>Política de desistência: devolução do valor até 48h antes do evento</li>
+                </ol>
+                <div class="cta-buttons" style="margin-top: 30px;">
+                    <button class="btn btn-secondary" onclick="copyPixKey()">
+                        <i class="fas fa-copy"></i> Copiar chave Pix
+                    </button>
+                    <a href="https://wa.me/5561996448248?text=Olá! Enviei o comprovante para o Piquenique com Arte." class="btn btn-primary" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Enviar comprovante
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        É aberto a todas as idades? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Não, o evento é destinado apenas para crianças de 05 a 08 anos.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        O que devo levar? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Nada. Todo o material de arte e lanche já estão incluídos no valor do ingresso.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Em caso de chuva, o evento será cancelado? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Não, pois o local é coberto e o evento acontecerá normalmente mesmo em caso de chuva.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        O local tem acessibilidade e estacionamento? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Sim, o local tem fácil acesso, acessibilidade e estacionamento disponível.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- LGPD -->
+    <section class="lgpd-section">
+        <div class="container">
+            <div class="lgpd-text">
+                <p>As informações fornecidas (nome, telefone e cidade) serão utilizadas apenas para confirmação da inscrição no evento, conforme a LGPD.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="https://i.imgur.com/BPkNjHc.png" alt="IzaManu Piquenique" class="footer-logo">
+            <div class="footer-whatsapp">
+                <a href="https://wa.me/5561996448248?text=Olá! Quero garantir minha vaga no Piquenique com Arte (20/09/2025), nome: [seu nome], cidade: [sua cidade]. Comprovante Pix em anexo." class="btn btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                </a>
+            </div>
+            <div class="copyright">
+                © 2025 IzaManu Piquenique — Todos os direitos reservados
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Contagem regressiva
+        function updateCountdown() {
+            const eventDate = new Date('September 20, 2025 14:00:00 GMT-0300');
+            const now = new Date();
+            const diff = eventDate - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Copiar chave PIX
+        function copyPixKey() {
+            const pixKey = '61996448248';
+            navigator.clipboard.writeText(pixKey).then(() => {
+                alert('Chave PIX copiada: ' + pixKey);
+            }).catch(err => {
+                console.error('Erro ao copiar chave PIX: ', err);
+                alert('Não foi possível copiar a chave PIX. Por favor, anote: ' + pixKey);
+            });
+        }
+        
+        // FAQ interativo
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('faq-active');
+            });
+        });
+        
+        // Suavizar rolagem para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
